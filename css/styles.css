@@ -49,11 +49,8 @@ p {
   left: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0);
-  /* Прозрачный фон хедера */
   transition: background-color 0.3s ease;
-  /* Плавное изменение цвета фона */
   z-index: 1000;
-  /* Убедитесь, что хедер находится выше других элементов */
 }
 
 .header.scrolled {
@@ -160,9 +157,7 @@ p {
 }
 .mission {
   position: relative;
-  /* Устанавливаем позиционирование относительно */
   background-color: #570f0f;
-  /* Исправляем цвет фона */
 }
 
 .mission-content {
@@ -192,9 +187,7 @@ p {
   font-weight: bold;
   font-size: 16px;
   opacity: 0;
-  /* Начальная непрозрачность */
   transition: opacity 0.3s ease;
-  /* Добавляем плавную анимацию для opacity */
 }
 
 div#carousel {
@@ -202,7 +195,6 @@ div#carousel {
   padding-top: 5%;
   font-size: 0;
   position: relative;
-  /* Для позиционирования содержимого относительно этого контейнера */
 }
 
 div#carousel::before {
@@ -213,7 +205,7 @@ div#carousel::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, #570f0f, rgba(20, 20, 20, 0.8)), url("/source/bg2.svg");
+  background: linear-gradient(to bottom, #570f0f, rgba(20, 20, 20, 0.8)), url("../source/bg2.svg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -358,19 +350,14 @@ div#carousel ~ span:hover {
 .insta-container {
   display: flex;
   flex-wrap: wrap;
-  /* Добавляем перенос на новую строку */
   justify-content: space-evenly;
-  /* Центрируем блоки */
   margin: 0 -5px;
-  /* Убираем горизонтальные отступы между блоками */
   background: linear-gradient(to top, #570f0f, #141414);
 }
 
 .instagram-media {
   flex: 0 0 calc(33.333% - 10px);
-  /* Делим контейнер на три равные части и учитываем отступы */
   margin-bottom: 70px !important;
-  /* Устанавливаем отступ между блоками */
   height: 600px !important;
   border: none !important;
 }
@@ -378,7 +365,6 @@ div#carousel ~ span:hover {
 @media only screen and (max-width: 768px) {
   .block {
     flex: 0 0 calc(50% - 20px);
-    /* Делим контейнер на две равные части на маленьких экранах */
   }
 }
 .insta-title {
@@ -533,9 +519,7 @@ main section {
   position: relative;
   overflow: hidden;
   width: 100%;
-  /* Для корректного расчета перемещения картинки */
   height: 450px;
-  /* Высота блока, замените на свою */
 }
 
 @media only screen and (max-width: 1024px) {
@@ -558,26 +542,20 @@ main section {
   content: "";
   position: absolute;
   width: 120px;
-  /* Ширина маленькой картинки */
   margin-left: 5%;
   height: 100px;
-  /* Высота маленькой картинки */
-  background-image: url("/source/sunflower.png");
-  /* Замените на свою картинку */
+  background-image: url("../source/sunflower.png");
   background-size: cover;
   background-position: center;
   animation: fadeInOut 4s infinite;
-  /* Анимация появления и исчезновения */
 }
 
 @keyframes fadeInOut {
   0%, 100% {
     opacity: 0;
-    /* Прозрачность, когда картинка не видна */
   }
   50% {
     opacity: 1;
-    /* Прозрачность, когда картинка видна */
   }
 }
 .about-clo main {
