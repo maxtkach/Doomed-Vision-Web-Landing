@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>DOOMED VISION</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!-- НАВБАР НАЧАЛО -->
+    <div class="header">
+        <nav class="navbar navbar-expand-sm sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand courier-prime-bold" href="#">DOOMED VISION</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg class="navbar-toggler-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100"
+                        height="100" viewBox="0,0,256,256">
+                        <g transform="">
+                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <g transform="scale(5.12,5.12)">
+                                    <path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+                <div class="collapse navbar-collapse text-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active courier-prime-regular" aria-current="page"
+                                href="#mission">mission</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link courier-prime-regular" href="#carousel">t-shirts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link courier-prime-regular" href="#inst">content</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link courier-prime-regular" href="#contact" tabindex="-1"
+                                aria-disabled="true">collaboration</a>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+    </div>
+    <!-- НАВБАР КОНЕЦ -->
+
+    <!-- ПЕРВЫЙ БЛОК НАЧАЛО -->
+    <div class="first-screen" id="first-screen">
+        <div class="video-container" id="video-container">
+            <video class="video" autoplay muted loop>
+                <source src="/source/prom.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay" id="overlay">
+                <a class="showingtext courier-prime-regular-italic" href="#about" id="text">///see more about
+                    drop\\\</a>
+            </div>
+        </div>
+    </div>
+    <!-- ПЕРВЫЙ БЛОК КОНЕЦ -->
+
+
+    <!-- БЛОК МИССИЯ НАЧАЛО -->
+    <div class="mission" onmousemove="moveCursor(event)" onmouseleave="hideCursorText()" id="mission">
+        <div class="mission-content">
+            <h1 class="mission-title text-center courier-prime-bold">MISSION</h1>
+            <p class="mission-description courier-prime-regular">Our mission is to inspire confidence and
+                self-expression through fashion. We believe that every individual deserves to feel empowered and
+                comfortable in their own skin. By curating stylish and versatile clothing collections, we aim to
+                provide our customers with the tools to embrace their unique style and make a statement wherever
+                they go. We are committed to sustainability and ethical practices, ensuring that our garments not
+                only look good but also do good for the planet and the people who create them. Join us on our
+                journey to redefine fashion, one outfit at a time.</p>
+        </div>
+    </div>
+    <!-- БЛОК МИССИЯ КОНЕЦ -->
+
+
+    <!-- БЛОК ФУТБОЛКИ НАЧАЛО -->
+    <div id="carousel">
+        <h1 class="tshirt-title text-center courier-prime-bold">T-SHIRTS IN STOCK</h1>
+        <figure id="spinner">
+            <figure>
+                <img src="/source/t1.png" alt="A danseur in brisé (a leap with the legs together) on a blue background">
+                <figcaption class="courier-prime-regular">doomed meal t-shirt</figcaption>
+            </figure>
+            <figure>
+                <img src="/source/t2.png" alt="">
+                <figcaption class="courier-prime-regular">cats t-shirt</figcaption>
+            </figure>
+            <figure>
+                <img src="/source/t3.png" alt="">
+                <figcaption class="courier-prime-regular">odesa t-shirt</figcaption>
+            </figure>
+            <figure>
+                <img src="/source/t4.png" alt="">
+                <figcaption class="courier-prime-regular">fallin t-shirt</figcaption>
+            </figure>
+
+        </figure>
+    </div>
+    <span style=float:left class=ss-icon onclick="galleryspin('-')">&lt;</span>
+    <span style=float:right class=ss-icon onclick="galleryspin('')">&gt;</span>
+    <!-- БЛОК ФУТБОЛКИ КОНЕЦ -->
+
+
+    <!-- БЛОК КАЛЬКУЛЯТОР НАЧАЛО -->
+    <div class="size-check ">
+        <div class="calculator-wrapper">
+            <h1 class="tshirt-title text-center courier-prime-regular">CALCULATE SIZE</h1>
+            <div class="input-wrapper">
+                <label for="width" class="size-label courier-prime-regular">width (0-60), cm: </label>
+                <input type="number" class="size-input courier-prime-regular" id="width" min="0" max="60">
+            </div>
+            <div class="input-wrapper">
+                <label for="length" class="size-label courier-prime-regular">length (0-78), cm: </label>
+                <input type="number" class="size-input courier-prime-regular" id="length" min="0" max="78">
+            </div>
+            <button onclick="calculateSize()" class="size-btn courier-prime-regular">give me my size!</button>
+            <p id="result" class="size-result courier-prime-bold-italic"></p>
+
+        </div>
+    </div>
+    <!-- БЛОК КАЛЬКУЛЯТОР КОНЕЦ -->
+
+    <!-- БЛОК ПРО ОДЕЖДУ НАЧАЛО -->
+    <div class="about-clo" id="about">
+        <h2 class="about-clo-description text-center courier-prime-bold" >ABOUT CLOTHING</h2>
+        <main>
+
+            <section>
+                <ul class='indexes'>
+                    <li data-index='0' class="courier-prime-bold about-clo-index">MATERIALS</li>
+                    <li data-index='1' class="courier-prime-bold about-clo-index">PRINTING</li>
+                    <li data-index='2' class="courier-prime-bold about-clo-index">PACKAGING</li>
+                </ul>
+                <ul class='tabs'>
+                    <li class='tab'>
+                        <article class='tab-content'>
+                            <h3 class="courier-prime-bold about-clo-title">materials</h3>
+                            <p class="courier-prime-regular about-clo-description">we try to make clothes exclusively
+                                from premium quality materials. our t-shirts are without a doubt 100%
+                                cotton</p>
+                        </article>
+                        <div class='tab-image'><img src='/source/cotton.jpg'></div>
+                    </li>
+                    <li class='tab'>
+                        <article class='tab-content'>
+                            <h3 class="courier-prime-bold about-clo-title">printing</h3>
+                            <p class="courier-prime-regular about-clo-description">the print (DTF printing) can
+                                withstand a huge number of washes, not inferior to world famous
+                                brands.</p>
+                        </article>
+                        <div class='tab-image'><img src='/source/material.jpg'></div>
+                    </li>
+                    <li class='tab'>
+                        <article class='tab-content'>
+                            <h3 class="courier-prime-bold about-clo-title">packaging</h3>
+                            <p class="courier-prime-regular about-clo-description">another one of our tricks is sending
+                                t-shirts in cans. Yes, exactly in tin cans. this gives our brand an
+                                identity on the Ukrainian market.</p>
+                            <button class='courier-prime-regular-italic'>watch packaging 3d vizualization</button>
+                        </article>
+                        <div class='tab-image'><img src='/source/bg2.jpg'></div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <!-- БЛОК ПРО ОДЕЖДУ КОНЕЦ -->
+
+
+
+    <!-- БЛОК ИНСТ НАЧАЛО -->
+    <h1 class="insta-title text-center courier-prime-bold" data-bs-toggle="collapse" href="#collapseExample"
+        role="button" aria-expanded="false" aria-controls="collapseExample" id="inst">LATEST CONTENT ↓</h1>
+    <div class="insta-container" class="collapse" id="collapseExample">
+        <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/Cyr3SnZNoM2/?utm_source=ig_embed&amp;utm_campaign=loading"
+            data-instgrm-version="14"
+            style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+        </blockquote>
+        <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/CypR4PCND2T/?utm_source=ig_embed&amp;utm_campaign=loading"
+            data-instgrm-version="14"
+            style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            <div style="padding:16px;">
+            </div>
+        </blockquote>
+        <script async src="//www.instagram.com/embed.js"></script>
+        <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/CwH2w-qtSjR/?utm_source=ig_embed&amp;utm_campaign=loading"
+            data-instgrm-version="14"
+            style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+        </blockquote>
+        <script async src="//www.instagram.com/embed.js"></script>
+        <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/C3gE-3yrsCW/?utm_source=ig_embed&amp;utm_campaign=loading"
+            data-instgrm-version="14"
+            style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+        </blockquote>
+        <script async src="//www.instagram.com/embed.js"></script>
+        <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/C2zhinXMXj9/?utm_source=ig_embed&amp;utm_campaign=loading"
+            data-instgrm-version="14"
+            style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+        </blockquote>
+        <script async src="//www.instagram.com/embed.js"></script>
+        <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/C2zh_6JspkC/?utm_source=ig_embed&amp;utm_campaign=loading"
+            data-instgrm-version="14"
+            style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+        </blockquote>
+        <script async src="//www.instagram.com/embed.js"></script>
+    </div>
+    <!-- БЛОК ИНСТ КОНЕЦ -->
+
+
+
+    <!-- БЛОК КОНТАКТ НАЧАЛО -->
+    <div class="contact-wrapper" id="contact">
+        <div class="contact-form">
+            <h2 class="courier-prime-bold">contact us</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="your name" class="courier-prime-regular-italic" required>
+                <input type="email" name="email" placeholder="your email" class="courier-prime-regular-italic" required>
+                <textarea name="message" rows="5" placeholder="your message" class="courier-prime-regular-italic"
+                    required></textarea>
+                <input type="submit" value="send" class="courier-prime-bold-italic">
+            </form>
+        </div>
+    </div>
+    <!-- БЛОК КОНТАКТ КОНЕЦ -->
+
+
+    <!-- БЛОК ФУТЕР НАЧАЛО -->
+    <div class="footer">
+        <hr>
+        <h3 class="courier-prime-regular-italic text-center">doomed vision 2024</h3>
+        <p class="courier-prime-regular-italic text-center">all rights reserved.</p>
+    </div>
+    <!-- БЛОК ФУТЕР КОНЕЦ -->
+
+
+    <div class="cursor"></div>
+    <div class="cursor cursor2"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

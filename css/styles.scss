@@ -1,0 +1,790 @@
+$red:#570f0f;
+
+// ОБЩЕЕ
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+button,
+p {
+  margin-top: 10px;
+}
+
+// ОБЩЕЕ
+
+
+// ШРИФТЫ
+.courier-prime-regular {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.courier-prime-bold {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.courier-prime-regular-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.courier-prime-bold-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+// ШРИФТЫ
+
+
+// ХЕДЕР НАВ
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  /* Прозрачный фон хедера */
+  transition: background-color 0.3s ease;
+  /* Плавное изменение цвета фона */
+  z-index: 1000;
+  /* Убедитесь, что хедер находится выше других элементов */
+}
+
+.header.scrolled {
+  background-color: #141414;
+  /* Цвет фона хедера при скролле */
+}
+
+.container-fluid {
+  padding-left: 60px !important;
+}
+
+.navbar-brand {
+  font-size: 30px !important;
+  color: $red !important;
+}
+
+
+.navbar-collapse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.nav-link {
+  color: #fff !important;
+  letter-spacing: 2px !important;
+  padding-left: 40px !important;
+}
+
+// ХЕДЕР НАВ
+
+
+// ПЕРВЫЙ ЭКРАН
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 800px;
+}
+
+.video {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 800px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* Скрытие текста по умолчанию */
+.showingtext {
+  display: inline-block;
+  white-space: nowrap;
+  color: $red;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.showingtext:hover {
+  color: #fff;
+}
+
+.overlay.active .showingtext {
+  opacity: 1;
+  animation: typing 10.5s steps(84, end);
+}
+
+@media screen and (max-width: 768px) {
+  .showingtext {
+    font-size: 18px;
+  }
+
+  .video {
+    height: 400px;
+  }
+
+  .overlay {
+    height: 400px;
+  }
+
+  .video-container {
+    height: 400px;
+  }
+}
+
+// ПЕРВЫЙ ЭКРАН
+
+
+// МИССИЯ
+.mission {
+  position: relative;
+  /* Устанавливаем позиционирование относительно */
+  background-color: $red;
+  /* Исправляем цвет фона */
+}
+
+.mission-content {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  color: #000;
+}
+
+.mission-title {}
+
+.mission-description {
+  font-size: 20px;
+  margin-left: 10%;
+  width: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  .mission-title {
+    font-size: 24px;
+  }
+
+  .mission-description {
+    font-size: 16px;
+  }
+}
+
+
+.custom-cursor-text {
+  position: fixed;
+  pointer-events: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  opacity: 0;
+  /* Начальная непрозрачность */
+  transition: opacity 0.3s ease;
+  /* Добавляем плавную анимацию для opacity */
+}
+
+// МИССИЯ
+
+// ФУТБОЛКИ
+div#carousel {
+  perspective: 1200px;
+  padding-top: 5%;
+  font-size: 0;
+  position: relative;
+  /* Для позиционирования содержимого относительно этого контейнера */
+}
+
+div#carousel::before {
+  content: "";
+  /* Создаем пустой псевдоэлемент */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, $red, rgba(20, 20, 20, 0.8)), url('/source/bg2.svg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  z-index: -1;
+  /* Помещаем фон под содержимое */
+  pointer-events: none;
+  /* Фон не будет перехватывать события мыши */
+}
+
+figure#spinner {
+  transform-style: preserve-3d;
+  height: 400px;
+  transform-origin: 50% 50% -400px;
+  transition: 1s;
+}
+
+figure#spinner figure {
+  width: 20%;
+  max-width: 500px;
+  position: absolute;
+  left: 40%;
+  transform-origin: 50% 50% -400px;
+  outline: 1px solid transparent;
+  transition: 1s;
+}
+
+figure {
+  margin: 0 !important;
+}
+
+figure#spinner figure.focus {
+  width: 26%;
+  left: 37%;
+  margin-top: -3rem;
+}
+
+figure#spinner figure img {
+  width: 100%;
+}
+
+figcaption {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding: .3rem;
+  z-index: 2;
+  font-size: 0rem;
+  background: rgba(0, 0, 0, 0);
+  transition: .6s;
+}
+
+figure#spinner figure.current:hover figcaption,
+figure#spinner figure.current.caption figcaption {
+  top: 90%;
+  background-color: $red;
+  color: #fff;
+  font-size: 20px;
+  bottom: 0;
+}
+
+div#carousel~span {
+  color: #fff;
+  margin: 20%;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: 0.6s color;
+  position: relative;
+  margin-top: -15rem;
+  border-bottom: none;
+  line-height: 0;
+}
+
+div#carousel~span:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+
+
+.tshirt-title {
+  color: #fff;
+  text-align: center;
+}
+
+// ФУТБОЛКИ
+
+
+// РАЗМЕР
+.size-check {
+  background-color: #141414;
+}
+
+.calculator-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3%;
+}
+
+
+
+.input-wrapper {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.size-label {
+  color: #fff;
+  width: 200px;
+}
+
+.size-input {
+  color: $red !important;
+  border: none !important;
+  width: 50px !important;
+  height: 50px !important;
+  text-align: center !important;
+}
+
+.size-btn {
+  margin-top: 20px;
+  padding: 10px;
+  border: none !important;
+  transition: all 0.5s ease-in-out;
+
+}
+
+.size-btn:hover {
+  letter-spacing: 3px;
+  background-color: $red;
+  color: #fff;
+}
+
+.size-result {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .calculator-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+
+// РАЗМЕР
+
+.insta-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Добавляем перенос на новую строку */
+  justify-content: space-evenly;
+  /* Центрируем блоки */
+  margin: 0 -5px;
+  /* Убираем горизонтальные отступы между блоками */
+  background: linear-gradient(to top, $red, #141414);
+}
+
+.instagram-media {
+  flex: 0 0 calc(33.333% - 10px);
+  /* Делим контейнер на три равные части и учитываем отступы */
+  margin-bottom: 70px !important;
+  /* Устанавливаем отступ между блоками */
+  height: 600px !important;
+  border: none !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .block {
+    flex: 0 0 calc(50% - 20px);
+    /* Делим контейнер на две равные части на маленьких экранах */
+  }
+}
+
+.insta-title {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 0px !important;
+  color: #fff;
+  background-color: #141414;
+}
+
+
+.cursor {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .2);
+  margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
+  transition: transform .85s cubic-bezier(0, 0.02, 0, 1);
+  display: none;
+  pointer-events: none;
+
+  @media (pointer: fine) {
+    display: block;
+  }
+}
+
+.cursor2 {
+  --size: 2px;
+  transition-duration: .7s;
+}
+
+// ПРО ОДЕЖДУ
+main section {
+  display: flex;
+  gap: 2rem;
+}
+
+.indexes,
+.tabs {
+  list-style-type: none;
+}
+
+.indexes {
+  font-size: 1rem;
+
+  & li {
+    padding: 1rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+}
+
+.tabs {
+  position: relative;
+}
+
+.tab {
+  position: absolute;
+  display: flex;
+  width: 530px;
+  height: 300px;
+  opacity: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
+.tab-content {
+  position: relative;
+  z-index: 5;
+  width: 300px;
+  opacity: 0;
+  transform: translateY(-5rem);
+
+
+  & button {
+    width: fit-content;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    font-size: 0.7rem;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+  }
+}
+
+@keyframes content {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-image {
+  position: absolute;
+  right: 1rem;
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+  transform: translateX(2rem);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--overlay);
+    mix-blend-mode: multiply;
+  }
+
+  & img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+  }
+}
+
+@keyframes image {
+  100% {
+    opacity: 1;
+    width: 300px;
+    transform: translateX(0);
+  }
+}
+
+.active .tab {
+  opacity: 1;
+  z-index: 5;
+}
+
+.active .tab-content {
+  animation: content 0.9s ease-out 0.4s forwards;
+}
+
+.active .tab-image {
+  animation: image 1s ease-out forwards;
+}
+
+.about-clo-index {
+  color: #fff;
+}
+
+.about-clo-title {
+  color: $red;
+}
+
+.about-clo-description {
+  color: #fff;
+}
+
+.about-clo {
+  padding-top: 3%;
+  padding-bottom: 10%;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  /* Для корректного расчета перемещения картинки */
+  height: 450px;
+  /* Высота блока, замените на свою */
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .about-clo main {
+    padding-left: 15% !important;
+    padding-top: 2%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about-clo main {
+    padding-left: 0% !important;
+    padding-top: 2%;
+  }
+
+  .about-clo::before {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
+
+
+
+.about-clo::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  /* Ширина маленькой картинки */
+  margin-left: 5%;
+  height: 100px;
+  /* Высота маленькой картинки */
+  background-image: url('/source/sunflower.png');
+  /* Замените на свою картинку */
+  background-size: cover;
+  background-position: center;
+  animation: fadeInOut 4s infinite;
+  /* Анимация появления и исчезновения */
+}
+
+@keyframes fadeInOut {
+
+  0%,
+  100% {
+    opacity: 0;
+    /* Прозрачность, когда картинка не видна */
+  }
+
+  50% {
+    opacity: 1;
+    /* Прозрачность, когда картинка видна */
+  }
+}
+
+.about-clo main {
+  padding-left: 30%;
+  padding-top: 2%;
+}
+
+@media only screen and (max-width: 425px) {
+  .navbar-brand {
+    font-size: 19px !important;
+  }
+  main section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0rem;
+  }
+
+  .indexes,
+  .tabs {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .indexes li {
+    height: 0px !important;
+    width: 0px !important;
+    opacity: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+  }
+
+  .tabs {
+    position: relative;
+    width: 100%;
+    padding-left: 13px;
+  }
+
+  .tab {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    opacity: 1;
+    background-color: black;
+    overflow: hidden;
+  }
+
+  .tab-content {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    opacity: 1;
+    transform: none;
+  }
+
+  .tab-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transform: none;
+  }
+
+  .about-clo {
+    padding-top: 3%;
+    padding-bottom: 10%;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 1300px;
+  }
+
+  .about-clo::before {
+    height: 0px !important;
+    width: 0px !important;
+    opacity: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+// ПРО ОДЕЖДУ
+
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $red;
+  padding-top: 50px;
+}
+
+.contact-form {
+  background-color: #141414;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: $red;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: calc(100% - 20px);
+  margin: 5px 10px;
+  padding: 10px;
+  border: 1px solid #333;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px auto;
+  display: block;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: $red;
+}
+
+.footer {
+  background-color: $red;
+  padding-top: 5%;
+  color: #000;
+}
