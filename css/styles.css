@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -49,16 +48,12 @@ p {
   left: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0);
-  /* Прозрачный фон хедера */
   transition: background-color 0.3s ease;
-  /* Плавное изменение цвета фона */
   z-index: 1000;
-  /* Убедитесь, что хедер находится выше других элементов */
 }
 
 .header.scrolled {
   background-color: #141414;
-  /* Цвет фона хедера при скролле */
 }
 
 .container-fluid {
@@ -122,7 +117,6 @@ p {
     width: 100%;
   }
 }
-/* Скрытие текста по умолчанию */
 .showingtext {
   display: inline-block;
   white-space: nowrap;
@@ -160,9 +154,7 @@ p {
 }
 .mission {
   position: relative;
-  /* Устанавливаем позиционирование относительно */
   background-color: #570f0f;
-  /* Исправляем цвет фона */
 }
 
 .mission-content {
@@ -192,9 +184,7 @@ p {
   font-weight: bold;
   font-size: 16px;
   opacity: 0;
-  /* Начальная непрозрачность */
   transition: opacity 0.3s ease;
-  /* Добавляем плавную анимацию для opacity */
 }
 
 div#carousel {
@@ -202,26 +192,22 @@ div#carousel {
   padding-top: 5%;
   font-size: 0;
   position: relative;
-  /* Для позиционирования содержимого относительно этого контейнера */
 }
 
 div#carousel::before {
   content: "";
-  /* Создаем пустой псевдоэлемент */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, #570f0f, rgba(20, 20, 20, 0.8)), url("/source/bg2.svg");
+  background: linear-gradient(to bottom, #570f0f, rgba(20, 20, 20, 0.8)), url("../source/bg2.svg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
-  /* Помещаем фон под содержимое */
   pointer-events: none;
-  /* Фон не будет перехватывать события мыши */
 }
 
 figure#spinner {
@@ -358,19 +344,14 @@ div#carousel ~ span:hover {
 .insta-container {
   display: flex;
   flex-wrap: wrap;
-  /* Добавляем перенос на новую строку */
   justify-content: space-evenly;
-  /* Центрируем блоки */
   margin: 0 -5px;
-  /* Убираем горизонтальные отступы между блоками */
   background: linear-gradient(to top, #570f0f, #141414);
 }
 
 .instagram-media {
   flex: 0 0 calc(33.333% - 10px);
-  /* Делим контейнер на три равные части и учитываем отступы */
   margin-bottom: 70px !important;
-  /* Устанавливаем отступ между блоками */
   height: 600px !important;
   border: none !important;
 }
@@ -378,7 +359,6 @@ div#carousel ~ span:hover {
 @media only screen and (max-width: 768px) {
   .block {
     flex: 0 0 calc(50% - 20px);
-    /* Делим контейнер на две равные части на маленьких экранах */
   }
 }
 .insta-title {
@@ -533,9 +513,7 @@ main section {
   position: relative;
   overflow: hidden;
   width: 100%;
-  /* Для корректного расчета перемещения картинки */
   height: 450px;
-  /* Высота блока, замените на свою */
 }
 
 @media only screen and (max-width: 1024px) {
@@ -558,26 +536,20 @@ main section {
   content: "";
   position: absolute;
   width: 120px;
-  /* Ширина маленькой картинки */
   margin-left: 5%;
   height: 100px;
-  /* Высота маленькой картинки */
-  background-image: url("/source/sunflower.png");
-  /* Замените на свою картинку */
+  background-image: url("../source/sunflower.png");
   background-size: cover;
   background-position: center;
   animation: fadeInOut 4s infinite;
-  /* Анимация появления и исчезновения */
 }
 
 @keyframes fadeInOut {
   0%, 100% {
     opacity: 0;
-    /* Прозрачность, когда картинка не видна */
   }
   50% {
     opacity: 1;
-    /* Прозрачность, когда картинка видна */
   }
 }
 .about-clo main {
@@ -593,6 +565,15 @@ main section {
     display: flex;
     flex-wrap: wrap;
     gap: 0rem;
+  }
+  .preloader-text span {
+    font-size: 25px;
+  }
+  .tab3 {
+    height: 600px;
+  }
+  figure#spinner figure {
+    width: 69%;
   }
   .indexes,
   .tabs {
@@ -710,4 +691,130 @@ main section {
   background-color: #570f0f;
   padding-top: 5%;
   color: #000;
+}
+
+.preloader-container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  z-index: 1000;
+}
+
+.preloader-container.active_new {
+  transform: translateY(-100vh);
+  transition: ease-in-out 2s;
+  transition-delay: 1s;
+}
+
+.preloader-text {
+  font-size: 90px;
+  /* opacity: 0; */
+  /* animation: fadeInLetter 1s forwards,  scaleIn 1s forwards; */
+  top: 50%;
+  height: 500px;
+  position: absolute;
+  width: 100%;
+  /* left: 50%; */
+  margin: auto;
+  text-align: center;
+}
+
+/* Animation for individual letters */
+.preloader-text span {
+  opacity: 0;
+  animation: topToBottom 10s forwards;
+  transform-origin: center;
+  /* Set the transform origin to the center of each letter */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInLetter {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    /* Start with a slightly smaller scale */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    /* End with the original scale */
+  }
+}
+@keyframes topToBottom {
+  0% {
+    transform: translateY(-100%);
+    /* Start position above the viewport */
+  }
+  100% {
+    transform: translateY(0);
+    /* End position at the center of the viewport */
+  }
+}
+/* Add scale-in animation */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.8);
+    /* Start with a slightly smaller scale */
+  }
+  100% {
+    transform: scale(1);
+    /* End with the original scale */
+  }
+}
+/* Add fade-out animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* Add expandWidth animation */
+@keyframes expandWidth {
+  0% {
+    width: auto;
+    /* Start with auto width */
+  }
+  100% {
+    width: 100%;
+    /* End with full width */
+    letter-spacing: 20px;
+  }
+}
+.wrap {
+  background: #fff;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.preloader-text h1,
+span {
+  color: #570f0f;
+}
+
+#container3d canvas {
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
 }/*# sourceMappingURL=styles.css.map */
